@@ -10,4 +10,10 @@ public class Main {
         World.setSize(9, 9);
         Robot myRobot = new Robot(4, 4, Direction.UP, 38);
     }
+
+    public void rotateTo(Direction direction, Robot robot) {
+        while (robot.getDirection() != direction) {
+            robot.turnLeft();
+        }
+    }
 }
