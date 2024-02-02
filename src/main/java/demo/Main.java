@@ -9,5 +9,22 @@ public class Main {
         World.setSize(9, 9);
         Robot myRobot = new Robot(4, 4, Direction.UP, 38);
         World.setVisible(true);
+        while (myRobot.isFrontClear()) myRobot.move();
+        myRobot.turnLeft();
+        while (myRobot.isFrontClear()) myRobot.move();
+
+        for (int i = 0; i < 4; i++) {
+            myRobot.turnLeft();
+            while (myRobot.isFrontClear()){
+                myRobot.putCoin();
+                myRobot.move();
+            }
+        }
+        myRobot.turnLeft();
+        for (int i = 0; i < 4; i++) if (myRobot.isFrontClear()) myRobot.move();
+        myRobot.turnLeft();
+        for (int i = 0; i < 4; i++) if (myRobot.isFrontClear()) myRobot.move();
+        myRobot.turnLeft();
+
     }
 }
