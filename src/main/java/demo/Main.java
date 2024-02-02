@@ -27,4 +27,10 @@ public class Main {
         myRobot.turnLeft();
 
     }
+
+    public void rotateTo(Direction direction, Robot robot) {
+        while (robot.getDirection() != direction) {
+            robot.turnLeft();
+        }
+    }
 }
